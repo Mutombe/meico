@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import {
-  TwitterLogo,
+  XLogo,
   FacebookLogo,
   TelegramLogo,
   EnvelopeSimple,
@@ -31,7 +31,7 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-2 pt-2">
               {[
-                { href: brand.socials.twitter,  label: 'Twitter',  Icon: TwitterLogo },
+                { href: brand.socials.twitter,  label: 'X',        Icon: XLogo },
                 { href: brand.socials.facebook, label: 'Facebook', Icon: FacebookLogo },
                 { href: brand.socials.telegram, label: 'Telegram', Icon: TelegramLogo },
                 { href: `mailto:${brand.email}`, label: 'Email',    Icon: EnvelopeSimple },
