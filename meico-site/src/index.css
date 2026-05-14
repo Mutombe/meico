@@ -1,0 +1,440 @@
+@import "tailwindcss";
+
+@theme {
+  /* === MEICO — crypto-grade, color-fused, institutional ============ */
+
+  /* Midnight base surfaces */
+  --color-midnight-50:  #E6EAF3;
+  --color-midnight-100: #B8C2D8;
+  --color-midnight-200: #6F80A6;
+  --color-midnight-300: #3E5180;
+  --color-midnight-400: #1B2D5A;
+  --color-midnight-500: #0F1F42;
+  --color-midnight-600: #0A1530;
+  --color-midnight-700: #060D20;
+  --color-midnight-800: #030713;
+  --color-midnight-900: #01030A;
+
+  /* Electric — primary brand */
+  --color-electric-300: #93C5FD;
+  --color-electric-400: #60A5FA;
+  --color-electric-500: #3B82F6;
+  --color-electric-600: #2563EB;
+  --color-electric-700: #1D4ED8;
+
+  /* Cyan — secondary brand / glow */
+  --color-cyan-300: #67E8F9;
+  --color-cyan-400: #22D3EE;
+  --color-cyan-500: #06B6D4;
+  --color-cyan-600: #0891B2;
+
+  /* Brass — editorial pop + premium tier */
+  --color-brass-300: #F1D58A;
+  --color-brass-400: #E9C063;
+  --color-brass-500: #C7A352;
+  --color-brass-600: #A1813B;
+  --color-brass-700: #6E5827;
+
+  /* Per-pillar accents — primary + secondary stops */
+  --color-pillar-research:    #4F8AF6;
+  --color-pillar-research-2:  #8B5CF6;
+  --color-pillar-b2b:         #38BDF8;
+  --color-pillar-b2b-2:       #06B6D4;
+  --color-pillar-exchange:    #06B6D4;
+  --color-pillar-exchange-2:  #14B8A6;
+  --color-pillar-pay:         #A855F7;
+  --color-pillar-pay-2:       #EC4899;
+  --color-pillar-token:       #60A5FA;
+  --color-pillar-token-2:     #818CF8;
+  --color-pillar-shipping:    #F59E0B;
+  --color-pillar-shipping-2:  #F97316;
+  --color-pillar-energy:      #22C55E;
+  --color-pillar-energy-2:    #84CC16;
+
+  /* Text — high-contrast on dark */
+  --color-paper:     #F2F4FA;
+  --color-paper-dim: #C8CFE0;
+  --color-paper-mid: #8C97B5;
+  --color-paper-low: #5D6885;
+
+  /* Fonts */
+  --font-display: "Geist", "Inter", system-ui, sans-serif;
+  --font-body:    "Geist", "Inter", system-ui, sans-serif;
+  --font-mono:    "Geist Mono", "JetBrains Mono", ui-monospace, monospace;
+  --font-accent:  "Fira Code", "JetBrains Mono", ui-monospace, monospace;
+
+  --spacing-edge: clamp(1.5rem, 4vw, 4.5rem);
+
+  /* Gradient stops — for the brand multi-stop default */
+  --grad-brand:   linear-gradient(110deg, #3B82F6 0%, #22D3EE 40%, #E9C063 100%);
+  --grad-electric:linear-gradient(135deg, #2563EB 0%, #3B82F6 50%, #22D3EE 100%);
+  --grad-violet:  linear-gradient(135deg, #8B5CF6 0%, #A855F7 50%, #EC4899 100%);
+}
+
+@layer base {
+  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--color-midnight-800);
+    color: var(--color-paper);
+    font-weight: 400;
+    line-height: 1.55;
+    font-size: 15.5px;
+    letter-spacing: -0.005em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    line-height: 1.02;
+  }
+
+  ::selection { background: var(--color-electric-500); color: var(--color-midnight-900); }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+@layer components {
+  .container-edge { padding-left: var(--spacing-edge); padding-right: var(--spacing-edge); }
+
+  /* === HEX clip-paths ============================================ */
+  .hex {
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+  .clip-corner {
+    clip-path: polygon(
+      14px 0%, 100% 0%,
+      100% calc(100% - 14px), calc(100% - 14px) 100%,
+      0% 100%, 0% 14px
+    );
+  }
+
+  /* === TYPOGRAPHIC PRIMITIVES ================================== */
+  .mono {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+  }
+  .mono-sm {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+  }
+  /* Code-font accent. Replaces the old italic-serif word-treatment with a
+     stylish monospaced display run — Fira Code at a slightly lighter
+     weight, brass-toned, with ligatures on. Used in titles to break the
+     sans rhythm without ever using italics. */
+  .italic-accent {
+    font-family: var(--font-accent);
+    font-style: normal;
+    font-weight: 500;
+    color: var(--color-brass-400);
+    letter-spacing: -0.01em;
+    font-size: 0.86em;
+    font-feature-settings: "calt" 1, "liga" 1, "ss01" 1, "ss02" 1;
+    vertical-align: 0.08em;
+  }
+  .accent-mono {
+    font-family: var(--font-accent);
+    font-weight: 500;
+    color: var(--color-brass-400);
+    letter-spacing: -0.01em;
+    font-feature-settings: "calt" 1, "liga" 1;
+  }
+
+  /* === GRADIENT TEXT — drop-in utility ==========================
+     Set --g-from + --g-to via inline style to recolour per pillar. */
+  .grad-text {
+    background: linear-gradient(
+      var(--g-angle, 135deg),
+      var(--g-from, #3B82F6) 0%,
+      var(--g-via,  #22D3EE) 50%,
+      var(--g-to,   #E9C063) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Display sizes */
+  .display-xl {
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, min(9vw, 14vh), 7.2rem);
+    line-height: 0.94;
+    font-weight: 500;
+    letter-spacing: -0.035em;
+  }
+  .display-lg {
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 5.8vw, 5rem);
+    line-height: 0.98;
+    font-weight: 500;
+    letter-spacing: -0.028em;
+  }
+  .display-md {
+    font-family: var(--font-display);
+    font-size: clamp(1.7rem, 3.8vw, 3rem);
+    line-height: 1.02;
+    font-weight: 500;
+    letter-spacing: -0.022em;
+  }
+
+  /* === HERO HEX ORBIT — keyframes ============================== */
+  @keyframes conic-spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+  @keyframes orbit-spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(-360deg); }
+  }
+  @keyframes ticker-scroll {
+    from { transform: translate3d(0,    0, 0); }
+    to   { transform: translate3d(-50%, 0, 0); }
+  }
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.55); }
+    50%      { box-shadow: 0 0 0 8px rgba(59, 130, 246, 0); }
+  }
+  @keyframes shimmer-x {
+    0%   { background-position: -100% 0; }
+    100% { background-position: 200% 0; }
+  }
+  @keyframes float-y {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-8px); }
+  }
+
+  /* === SURFACE — hex lattice + radial wash ======================
+     Two layers: large faint hexagonal lattice (SVG data-URL pattern)
+     + radial wash for centred glow. Subtle but unmistakeably crypto. */
+  .surface-grid {
+    background-color: var(--color-midnight-800);
+    background-image:
+      radial-gradient(ellipse 1400px 1000px at 50% -8%,
+        rgba(59, 130, 246, 0.16) 0%,
+        rgba(59, 130, 246, 0.06) 40%,
+        transparent 75%),
+      radial-gradient(ellipse 900px 700px at 90% 90%,
+        rgba(34, 211, 238, 0.08) 0%,
+        transparent 70%),
+      /* Hex lattice — encoded SVG, 60px hex with 1px hairline */
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 52' fill='none'%3E%3Cpath d='M15 0 L45 0 L60 26 L45 52 L15 52 L0 26 Z' stroke='%2360A5FA' stroke-opacity='0.045' stroke-width='1'/%3E%3C/svg%3E");
+    background-size: 100% 100%, 100% 100%, 60px 52px;
+    background-attachment: fixed, fixed, scroll;
+  }
+
+  /* === GLASS panels ============================================ */
+  .glass {
+    background: linear-gradient(180deg,
+      rgba(15, 31, 66, 0.50) 0%,
+      rgba(6, 13, 32, 0.85) 100%);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(96, 165, 250, 0.12);
+  }
+  .glass-hover {
+    transition: border-color 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .glass-hover:hover {
+    border-color: rgba(96, 165, 250, 0.45);
+    transform: translateY(-3px);
+    box-shadow:
+      0 24px 60px -28px rgba(59, 130, 246, 0.40),
+      0 0 0 1px rgba(59, 130, 246, 0.10) inset;
+  }
+
+  /* === HAIRLINES ============================================== */
+  .hairline {
+    height: 1px;
+    background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(147, 197, 253, 0.40) 20%,
+      rgba(147, 197, 253, 0.40) 80%,
+      transparent 100%);
+  }
+  .hairline-brass {
+    height: 1px;
+    background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(233, 192, 99, 0.55) 20%,
+      rgba(233, 192, 99, 0.55) 80%,
+      transparent 100%);
+  }
+
+  /* === INK-UNDERLINE link ===================================== */
+  .ink-underline { position: relative; display: inline-block; }
+  .ink-underline::after {
+    content: ""; position: absolute; left: 0; bottom: -3px;
+    width: 100%; height: 1px; background-color: currentColor;
+    transform-origin: right; transform: scaleX(0);
+    transition: transform 0.55s cubic-bezier(0.7, 0, 0.3, 1);
+  }
+  .ink-underline:hover::after {
+    transform-origin: left; transform: scaleX(1);
+  }
+
+  /* === BUTTONS — electric (multi-stop gradient + shimmer) ===== */
+  .btn-electric {
+    position: relative; overflow: hidden;
+    display: inline-flex; align-items: center; gap: 0.55rem;
+    padding: 0.95rem 1.5rem;
+    background: linear-gradient(110deg, #2563EB 0%, #3B82F6 50%, #22D3EE 100%);
+    background-size: 200% 200%;
+    background-position: 0% 50%;
+    color: #FFFFFF;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: background-position 0.5s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 24px -8px rgba(59, 130, 246, 0.55);
+  }
+  .btn-electric::before {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(110deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.3) 50%,
+      transparent 70%);
+    background-size: 250% 100%;
+    animation: shimmer-x 7s linear infinite;
+    pointer-events: none;
+  }
+  .btn-electric:hover {
+    background-position: 100% 50%;
+    box-shadow: 0 16px 40px -10px rgba(59, 130, 246, 0.70);
+    transform: translateY(-2px);
+  }
+  .btn-electric:active { transform: translateY(0); }
+
+  .btn-ghost {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.9rem 1.45rem;
+    background: rgba(96, 165, 250, 0.04);
+    color: var(--color-paper);
+    border: 1px solid rgba(147, 197, 253, 0.28);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  }
+  .btn-ghost:hover {
+    border-color: rgba(147, 197, 253, 0.8);
+    background: rgba(96, 165, 250, 0.10);
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.10);
+  }
+
+  /* === GLOW utilities ========================================= */
+  .glow-electric { box-shadow: 0 0 28px rgba(59, 130, 246, 0.32), 0 0 70px rgba(59, 130, 246, 0.18); }
+  .glow-cyan     { box-shadow: 0 0 28px rgba(6, 182, 212, 0.32), 0 0 70px rgba(6, 182, 212, 0.18); }
+  .text-glow     { text-shadow: 0 0 24px rgba(34, 211, 238, 0.40); }
+
+  /* === PULSE DOT — for live indicators ======================== */
+  .pulse-dot {
+    position: relative;
+    width: 8px; height: 8px;
+    background: var(--color-electric-400);
+    border-radius: 50%;
+  }
+  .pulse-dot::after {
+    content: ""; position: absolute; inset: 0;
+    border-radius: 50%;
+    background: var(--color-electric-400);
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  /* === PRE-SALE TAG — small refined pill ====================== */
+  .presale-tag {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    padding: 0.45rem 0.85rem;
+    border: 1px solid rgba(233, 192, 99, 0.4);
+    color: var(--color-brass-300);
+    background: rgba(233, 192, 99, 0.05);
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    border-radius: 100px;
+    backdrop-filter: blur(6px);
+  }
+  .presale-tag .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--color-brass-400);
+    box-shadow: 0 0 8px var(--color-brass-400);
+  }
+
+  /* === HERO HEX — outer container ============================ */
+  /* Hero must fit the first screen — viewport height MINUS the
+     fixed nav (64) and the TopTicker (32) = 96px of chrome. */
+  .hero-fit {
+    min-height: calc(100svh - 96px);
+    max-height: calc(100svh - 96px);
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
+  .hero-fit > * { min-height: 0; }
+
+  /* Bespoke page heroes — same first-screen contract, but a single
+     vertically-centred content block rather than a 3-row grid.
+     On mobile the two-column heroes stack and can grow taller than a
+     screen — there we drop the hard cap so nothing gets clipped, and
+     only enforce the one-screen lock from md upward. */
+  .page-hero-fit {
+    min-height: calc(100svh - 96px);
+    display: flex;
+    align-items: center;
+  }
+  .page-hero-fit > * { width: 100%; min-height: 0; }
+  @media (min-width: 768px) {
+    .page-hero-fit {
+      max-height: calc(100svh - 96px);
+      overflow: hidden;
+    }
+  }
+
+  /* Hero title — slightly more conservative scale than display-xl
+     so a 4-line title always fits without scrolling. */
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, min(8vw, 11.5vh), 6rem);
+    line-height: 0.96;
+    font-weight: 500;
+    letter-spacing: -0.035em;
+  }
+
+  /* === FOCUS ================================================= */
+  :where(a, button, input, select, textarea):focus-visible {
+    outline: 2px solid var(--color-electric-400);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* === SLOW SPINS (declarative) =============================== */
+  .spin-slow  { animation: conic-spin 32s linear infinite; }
+  .spin-rev   { animation: orbit-spin 42s linear infinite; }
+  .float-y    { animation: float-y 6s ease-in-out infinite; }
+
+  /* === MASK reveal — used by titles =========================== */
+  .mask-line { display: inline-block; overflow: hidden; vertical-align: top; }
+}
