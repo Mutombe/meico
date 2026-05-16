@@ -157,7 +157,7 @@ export const pillars = [
     letter: 'B',
     verb: 'Connecting',
     heroImage: '/illustrations/b2b.png',
-    iconImage: null,
+    iconImage: '/pillar-icons/b2b.png',
     summary:
       'Newly introduced products from new innovations need a common marketplace as the first step toward reaching critical mass. With the B2B offering a latitude of payment options and shipping methods, adoption eventually becomes self-sustaining — letting manufacturers scale and ramp up production due to rising demand and healthy competition.',
     body: [

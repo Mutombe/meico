@@ -33,6 +33,29 @@ export default function EcosystemHero({ kicker, intro }) {
             <span className="block w-1.5 h-1.5 rounded-full bg-cyan-400" style={{ boxShadow: '0 0 8px #22D3EE' }} />
             — {kicker}
           </p>
+
+          {/* Ecosystem diagram — fills the glass card edge-to-edge,
+              soft-blended into the panel. */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.1, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+            className="relative mt-4 -mx-6 md:-mx-8 w-[calc(100%+3rem)] md:w-[calc(100%+4rem)]"
+            aria-hidden
+          >
+            <img
+              src="/ecosystem-hero.png"
+              alt=""
+              loading="lazy"
+              className="block w-full h-auto md:max-h-[28vh] md:object-contain"
+              style={{
+                mixBlendMode: 'screen',
+                opacity: 0.88,
+                filter: 'drop-shadow(0 6px 20px rgba(34, 211, 238, 0.25))',
+              }}
+            />
+          </motion.div>
+
           <h1 className="display-lg text-paper mt-4">
             <MaskWord delay={0.1}>Seven products,</MaskWord>{' '}
             <MaskWord delay={0.3}><span className="italic-accent">one chain.</span></MaskWord>

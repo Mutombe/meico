@@ -9,7 +9,7 @@ import { why } from '../data/siteData.js'
 export default function Why() {
   return (
     <PageTransition>
-      <WhyHero kicker={why.kicker} intro={why.intro} />
+      <WhyHero kicker={why.kicker} intro={why.intro} coinImage="/meico-coin-silver.png" />
 
       <SectionSeam palette={['#3B82F6', '#22D3EE', '#A855F7']} variant="wave-soft" height={130} />
 
