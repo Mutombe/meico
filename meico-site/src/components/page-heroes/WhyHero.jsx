@@ -7,10 +7,14 @@ import { MaskWord } from '../MaskReveal.jsx'
  *
  * The four economic drivers rendered as a literal foundation: four
  * glass blocks stacked into a base, each block a tier, mortar-lines of
- * brass between them. The title sits above, the blocks "support" it.
+ * brass between them. Copy sits left, the blocks right.
  *
- * Interactive: hover any block and it widens slightly, lifts, brightens
- * its tint + edge rail and its numeral pops (pointer events → tap too).
+ * Layout contract — the reason this hero kept clipping:
+ *   The section is *at least* one screen tall (`min-h`) and vertically
+ *   centres its content, but it is NEVER height-capped. If the copy is
+ *   tall it simply makes the hero a touch taller — it is never clipped
+ *   against the nav or the seam. Columns are centre-aligned with no
+ *   stretch and no spacers, so the copy flows as one continuous block.
  */
 const BLOCKS = [
   { t: 'Human Capital',    w: '100%', tint: 'rgba(59,130,246,0.16)',  edge: '#3B82F6' },
@@ -22,34 +26,32 @@ const BLOCKS = [
 export default function WhyHero({ kicker, intro, coinImage }) {
   const [hover, setHover] = useState(null)
   return (
-    <section className="page-hero-fit relative overflow-hidden">
+    <section className="relative flex items-center overflow-hidden min-h-[calc(100svh-96px)]">
       <div
         aria-hidden
         className="absolute inset-0 pointer-events-none"
         style={{ background: 'radial-gradient(ellipse 70% 60% at 30% 20%, rgba(59,130,246,0.16), transparent 65%)' }}
       />
 
-      <div className="container-edge relative py-8 grid lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-16 items-center lg:items-stretch">
+      <div className="container-edge relative w-full py-10 md:py-14 grid lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-14 items-center">
         {/* LEFT — copy */}
         <div>
-          {/* MEICO silver coin — sits on top of the column, anchoring the
-              copy that follows. Decorative — aria-hidden. */}
+          {/* MEICO silver coin — small anchor above the copy. Decorative. */}
           {coinImage && (
             <motion.div
               initial={{ opacity: 0, scale: 0.9, y: -10 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 1.0, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="relative mb-6 flex items-center justify-start"
+              className="relative mb-5 flex items-center justify-start"
               aria-hidden
             >
-              {/* Soft halo behind the coin */}
               <span
                 aria-hidden
                 className="absolute pointer-events-none"
                 style={{
-                  width: 280,
-                  height: 280,
-                  left: -30,
+                  width: 220,
+                  height: 220,
+                  left: -28,
                   top: '50%',
                   transform: 'translateY(-50%)',
                   background:
@@ -63,11 +65,11 @@ export default function WhyHero({ kicker, intro, coinImage }) {
                 loading="lazy"
                 className="relative float-y"
                 style={{
-                  width: 'clamp(140px, 16vw, 200px)',
+                  width: 'clamp(92px, 10vw, 124px)',
                   height: 'auto',
                   objectFit: 'contain',
                   filter:
-                    'drop-shadow(0 18px 36px rgba(59,130,246,0.35)) drop-shadow(0 6px 12px rgba(0,0,0,0.45))',
+                    'drop-shadow(0 16px 30px rgba(59,130,246,0.35)) drop-shadow(0 6px 12px rgba(0,0,0,0.45))',
                 }}
               />
             </motion.div>
@@ -81,14 +83,14 @@ export default function WhyHero({ kicker, intro, coinImage }) {
             <span className="block w-1.5 h-1.5 rounded-full bg-electric-400" style={{ boxShadow: '0 0 8px #60A5FA' }} />
             — {kicker}
           </motion.p>
-          <h1 className="display-xl text-paper mt-5">
+          <h1 className="display-lg text-paper mt-4">
             <MaskWord delay={0.05}>Blockchain meets the major</MaskWord>{' '}
             <MaskWord delay={0.25}><span className="italic-accent">economic drivers.</span></MaskWord>
           </h1>
           <motion.p
             initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="mt-7 text-paper-dim text-[16px] leading-[1.8] max-w-xl"
+            className="mt-5 text-paper-dim text-[14px] md:text-[14.5px] leading-[1.7] max-w-xl"
           >
             {intro}
           </motion.p>
@@ -116,7 +118,7 @@ export default function WhyHero({ kicker, intro, coinImage }) {
               onPointerEnter={() => setHover(i)}
               onPointerLeave={() => setHover(null)}
               onPointerDown={() => setHover(i)}
-              className="glass clip-corner px-6 py-5 flex items-center justify-between relative overflow-hidden cursor-pointer"
+              className="glass clip-corner px-6 py-4 flex items-center justify-between relative overflow-hidden cursor-pointer"
               style={{
                 width: isHover ? `calc(${b.w} + 8%)` : b.w,
                 maxWidth: '100%',
@@ -150,12 +152,6 @@ export default function WhyHero({ kicker, intro, coinImage }) {
             </motion.div>
             )
           })}
-
-          {/* Spacer — desktop only. Pushes the mortar + mainspring label
-              to the bottom of the stretched column so the right artifact
-              spans the full hero row, mirroring the intro at the bottom
-              of the left column. Mobile keeps its tight stack. */}
-          <div className="hidden lg:block lg:flex-1" aria-hidden />
 
           {/* mortar base line */}
           <motion.div
