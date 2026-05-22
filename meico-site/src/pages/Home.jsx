@@ -221,9 +221,6 @@ function EcosystemPillars() {
             <span className="grad-text">Seven pillars,</span>{' '}
             <span className="italic-accent">one chain.</span>
           </h2>
-          <p className="mt-5 text-paper-dim text-[15.5px] leading-relaxed">
-            Each pillar carries its own colour, its own number, its own page. Built on a single Layer-0 chain.
-          </p>
         </div>
       </SectionReveal>
 
@@ -509,13 +506,10 @@ function DocumentsVault() {
           <p className="mono text-brass-400 text-[0.62rem]">— The Documents</p>
           <h2 className="display-lg mt-5">
             <span className="grad-text" style={{ '--g-from': '#FFFFFF', '--g-via': '#F1D58A', '--g-to': '#C7A352' }}>
-              The case,
+              Read our official documents
             </span>{' '}
-            <span className="italic-accent">written in full.</span>
+            <span className="italic-accent">to know more.</span>
           </h2>
-          <p className="mt-5 text-paper-dim text-[15.5px] leading-relaxed">
-            Six PDFs covering the technical architecture, tokenomics, statistical data, referral programme and legal terms.
-          </p>
         </div>
       </SectionReveal>
 
@@ -548,24 +542,14 @@ function ClosingCta() {
         </SectionReveal>
         <SectionReveal delay={0.05}>
           <h2 className="display-lg mt-5">
-            <span className="grad-text">Be on the chain when the chain</span>{' '}
+            <span className="grad-text">Be there when the token sale</span>{' '}
             <span className="italic-accent">goes live.</span>
           </h2>
         </SectionReveal>
         <SectionReveal delay={0.1}>
           <p className="mt-5 text-paper-dim leading-relaxed max-w-2xl mx-auto">
-            Pre-sale is opening soon. Read the Whitepaper, join the referral program, and follow @Meicolabs for the start-date announcement.
+            Presale is coming soon. Read the Whitepaper, join our Telegram group, and follow other socials for updates.
           </p>
-        </SectionReveal>
-        <SectionReveal delay={0.15}>
-          <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
-            <MagneticButton as={Link} to="/referrals" className="btn-electric inline-flex">
-              Get a Referral Code <ArrowUpRight size={12} weight="bold" />
-            </MagneticButton>
-            <MagneticButton as={Link} to="/contact" className="btn-ghost inline-flex">
-              Talk to the Team
-            </MagneticButton>
-          </div>
         </SectionReveal>
       </div>
     </section>

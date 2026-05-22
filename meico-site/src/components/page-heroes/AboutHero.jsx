@@ -24,7 +24,7 @@ const STATS = [
   { v: 'Two-token', l: 'Coin + stablecoin',  tint: 'rgba(168,85,247,0.13)', edge: '#A855F7' },
 ]
 
-export default function AboutHero({ kicker, mission }) {
+export default function AboutHero({ kicker, mission, intro = [] }) {
   const [hexHover, setHexHover] = useState(false)
 
   return (
@@ -56,14 +56,25 @@ export default function AboutHero({ kicker, mission }) {
               className="absolute -top-16 -left-16 w-56 h-56 rounded-full pointer-events-none"
               style={{ background: 'radial-gradient(circle, rgba(59,130,246,0.40), transparent 70%)', filter: 'blur(28px)' }}
             />
-            <p className="mono text-electric-300 text-[0.62rem] relative">— {kicker}</p>
-            <h1 className="hero-title text-paper mt-5 relative">
-              <MaskWord delay={0.1}>Institutional-grade</MaskWord>{' '}
-              <MaskWord delay={0.28}>infrastructure for an</MaskWord>{' '}
-              <MaskWord delay={0.46}>
-                <span className="italic-accent">African step-change.</span>
-              </MaskWord>
-            </h1>
+            <div className="relative">
+              <p className="mono text-electric-300 text-[0.62rem]">— {kicker}</p>
+              <h1 className="hero-title text-paper mt-5">
+                <MaskWord delay={0.1}>Institutional-grade</MaskWord>{' '}
+                <MaskWord delay={0.28}>infrastructure for an</MaskWord>{' '}
+                <MaskWord delay={0.46}>
+                  <span className="italic-accent">African step-change.</span>
+                </MaskWord>
+              </h1>
+            </div>
+            {intro.length > 0 && (
+              <div className="relative mt-6 space-y-3">
+                {intro.map((p, i) => (
+                  <p key={i} className="text-paper-dim text-[12.5px] md:text-[13.5px] leading-[1.7]">
+                    {p}
+                  </p>
+                ))}
+              </div>
+            )}
           </motion.div>
 
           {/* SPINNING HEX CELL — spins faster on hover */}

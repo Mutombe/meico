@@ -10,47 +10,21 @@ import { about, pillars } from '../data/siteData.js'
 export default function About() {
   return (
     <PageTransition>
-      <AboutHero kicker={about.kicker} mission={about.mission} />
+      <AboutHero kicker={about.kicker} mission={about.mission} intro={about.ecosystem.body} />
 
       <SectionSeam palette={['#3B82F6', '#22D3EE', '#A855F7']} variant="wave-soft" height={120} />
 
-      {/* What we are building — body paras as a structured two-column read */}
-      <section className="container-edge py-14 md:py-20">
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-14">
-          <div className="lg:col-span-4">
-            <SectionReveal>
-              <p className="mono text-electric-300 text-[0.62rem]">— What we are building</p>
-              <h2 className="display-md text-paper mt-5">
-                One chain.{' '}
-                <span className="italic-accent">Every surface.</span>
-              </h2>
-            </SectionReveal>
+      {/* What we are building — a single bold statement */}
+      <section className="container-edge py-16 md:py-24">
+        <SectionReveal>
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="mono text-electric-300 text-[0.62rem]">— What we are building</p>
+            <h2 className="display-md text-paper mt-6">
+              Building foundations for an economic step change that{' '}
+              <span className="italic-accent">echoes across generations.</span>
+            </h2>
           </div>
-          <div className="lg:col-span-8 space-y-6">
-            {about.body.slice(1).map((p, i) => (
-              <SectionReveal key={i} delay={i * 0.06}>
-                <div className="flex gap-5">
-                  <span
-                    className="font-display shrink-0 leading-none pt-1"
-                    style={{
-                      fontSize: '28px',
-                      fontWeight: 500,
-                      letterSpacing: '-0.03em',
-                      background: 'linear-gradient(135deg, #FFFFFF, #60A5FA)',
-                      WebkitBackgroundClip: 'text',
-                      backgroundClip: 'text',
-                      color: 'transparent',
-                      WebkitTextFillColor: 'transparent',
-                    }}
-                  >
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
-                  <p className="text-paper-dim text-[16.5px] leading-[1.85]">{p}</p>
-                </div>
-              </SectionReveal>
-            ))}
-          </div>
-        </div>
+        </SectionReveal>
       </section>
 
       <SectionSeam palette={['#22D3EE', '#3B82F6', '#A855F7']} variant="wave-soft" height={120} />

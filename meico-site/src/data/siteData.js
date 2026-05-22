@@ -30,7 +30,7 @@ export const hero = {
     { text: 'on-chain economy.',               italic: false },
   ],
   subline:
-    'A Layer-0 hybrid blockchain underpinning Real-World Assets and DePINs across the continent — built so freight, energy, tokenized companies and remittances all settle on a single chain.',
+    'A Layer-0 hybrid blockchain underpinning Real-World Assets and DePINs across the continent.',
   // Rotating capability line — cycles in the hero, one at a time
   rotators: [
     'DePINs for freight services',
@@ -66,7 +66,7 @@ export const about = {
     "Our mission is to leverage blockchain technology by employing every available strategic method to achieve near-total economic self-sufficiency in the African economy.",
   ],
   mission:
-    'To achieve near-total economic self-sufficiency in the African economy — with blockchain as the mainspring.',
+    'Our mission is to leverage blockchain technology by employing every available strategic method to achieve near-total economic self-sufficiency in the African economy.',
   attributes: [
     { label: 'Enhanced Security',  detail: 'Stellar consensus underpins a hardened, institutional-grade settlement layer.' },
     { label: 'Low Transaction Fees', detail: 'Layer-0 economics keep per-transaction cost near-zero across every product.' },
@@ -91,20 +91,41 @@ export const why = {
     "Meico is uniquely positioned to spearhead the adoption of digital currencies in Africa using distributed ledger technology. We are motivated by the desire to see human capital, physical capital, natural resources, and new technology — the major drivers of economic growth — congealing into a robust foundation for sustainable long-term growth, with blockchain as the mainspring. We intend to work with experts across industries to supplant obsolete technologies with new ones and lower the high costs associated with creative destruction.",
   reasons: [
     {
-      title: 'A hybrid Layer-0 chain',
-      body: 'Combines the privacy controls of a permissioned chain with the transparency of a public one. Built on Stellar consensus — fast, low-fee, energy-efficient.',
+      title: 'African Economic Vision',
+      body: 'A blockchain initiative focused not just on finance, but on industrialisation, manufacturing, and transportation, addressing real structural economic gaps in Africa.',
     },
     {
-      title: 'Two-token economics',
-      body: 'The Meico-coin (utility + governance) and a fully-compliant Meico stablecoin, both native to a single chain. No bridges, no wrapped assets for everyday transactions.',
+      title: 'Layer-0 Infrastructure',
+      body: 'As a Layer-0 blockchain, Meico enables multiple Layer-1 chains, giving developers flexibility, interoperability, and independence from rigid protocols.',
     },
     {
-      title: 'Real-world asset focus',
-      body: 'Designed from day one to underpin DePINs and tokenized real-world assets — from freight rigs to renewable energy plants to African start-up equity.',
+      title: 'Hybrid Permissioned Architecture',
+      body: 'Combines public transparency with private control, allowing organisations to manage sensitive data while still leveraging blockchain benefits.',
     },
     {
-      title: 'Pan-African remit',
-      body: 'Every product in the ecosystem is sized for African scale and African problems — from MeicoPay remittances to the B2B marketplace to the Research Institute.',
+      title: 'Gasless Stablecoin Model',
+      body: 'A native stablecoin with no gas fees, replaced by predictable transaction fees, removing a major friction point in blockchain usability. No bridges, no wrapped assets for everyday transactions.',
+    },
+    {
+      title: 'Real-World Asset (RWA) Tokenization Focus',
+      body: 'Unlocks fractional ownership, liquidity, and access to capital for African businesses and innovators.',
+    },
+    {
+      title: 'DePIN Integration for Critical Infrastructure',
+      body: 'Applies blockchain to energy and logistics, incentivizing real-world infrastructure development, especially renewable energy.',
+    },
+    {
+      title: 'Human Capital Development Focus',
+      body: 'The research institute and training ecosystem ensure long-term sustainability by developing local talent and fostering innovation.',
+    },
+    {
+      title: 'Built-In Financial Inclusion',
+      body: 'Removes barriers through:',
+      bullets: [
+        'Easy onboarding (fiat on/off ramps)',
+        'Low fees',
+        'Open access to investment opportunities',
+      ],
     },
   ],
 }

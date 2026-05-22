@@ -24,9 +24,9 @@ export default function RotatingLine({ items = [], interval = 2900, className = 
   if (items.length === 0) return null
 
   return (
-    <div className={`flex items-center gap-3 ${className}`}>
+    <div className={`flex items-center gap-3.5 ${className}`}>
       {/* pulsing hex marker */}
-      <span className="relative flex items-center justify-center shrink-0" style={{ width: 24, height: 24 }}>
+      <span className="relative flex items-center justify-center shrink-0" style={{ width: 30, height: 30 }}>
         {!reduced && (
           <motion.span
             aria-hidden
@@ -36,7 +36,7 @@ export default function RotatingLine({ items = [], interval = 2900, className = 
             transition={{ duration: 2.6, repeat: Infinity, ease: 'easeInOut' }}
           />
         )}
-        <svg width="15" height="15" viewBox="0 0 15 15" className="relative">
+        <svg width="20" height="20" viewBox="0 0 15 15" className="relative">
           <polygon
             points="7.5,1 13.5,4.75 13.5,10.25 7.5,14 1.5,10.25 1.5,4.75"
             fill="none" stroke="#22D3EE" strokeWidth="1.5"
@@ -45,8 +45,10 @@ export default function RotatingLine({ items = [], interval = 2900, className = 
         </svg>
       </span>
 
-      {/* rotating text — fixed-height clip, vertical slide */}
-      <div className="relative overflow-hidden" style={{ height: 30 }}>
+      {/* rotating text — fixed-height clip, vertical slide. Height +
+          line-height scale with the font so the larger text never
+          overflows narrow phones. */}
+      <div className="relative overflow-hidden" style={{ height: 'clamp(30px, 4.2vw, 48px)' }}>
         <AnimatePresence mode="popLayout" initial={false}>
           <motion.span
             key={i}
@@ -54,11 +56,12 @@ export default function RotatingLine({ items = [], interval = 2900, className = 
             animate={reduced ? { opacity: 1 } : { y: '0%', opacity: 1 }}
             exit={reduced ? { opacity: 0 } : { y: '-115%', opacity: 0 }}
             transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-            className="block whitespace-nowrap font-display leading-[30px]"
+            className="block whitespace-nowrap font-display"
             style={{
-              fontSize: 'clamp(15px, 1.5vw, 18px)',
-              fontWeight: 500,
-              letterSpacing: '-0.01em',
+              fontSize: 'clamp(17px, 2.7vw, 31px)',
+              lineHeight: 'clamp(30px, 4.2vw, 48px)',
+              fontWeight: 600,
+              letterSpacing: '-0.015em',
               background: 'linear-gradient(100deg, #FFFFFF 0%, #93C5FD 55%, #22D3EE 100%)',
               WebkitBackgroundClip: 'text',
               backgroundClip: 'text',

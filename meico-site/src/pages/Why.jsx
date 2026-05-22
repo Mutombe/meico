@@ -27,6 +27,16 @@ export default function Why() {
                   </div>
                 </div>
                 <p className="mt-5 text-paper-dim text-[15px] leading-relaxed">{r.body}</p>
+                {r.bullets && (
+                  <ul className="mt-3 space-y-2">
+                    {r.bullets.map((b) => (
+                      <li key={b} className="flex items-start gap-2.5 text-paper-dim text-[15px] leading-relaxed">
+                        <span aria-hidden className="mt-2 w-1.5 h-1.5 rounded-full bg-electric-400 shrink-0" />
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             </SectionReveal>
           ))}

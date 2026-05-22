@@ -42,8 +42,8 @@ export default function DocumentsHero({ kicker, intro, count = 6 }) {
             — {kicker}
           </motion.p>
           <h1 className="display-xl text-paper mt-5">
-            <MaskWord delay={0.05}>The case,</MaskWord>{' '}
-            <MaskWord delay={0.25}><span className="italic-accent">written in full.</span></MaskWord>
+            <MaskWord delay={0.05}>Read our official documents</MaskWord>{' '}
+            <MaskWord delay={0.25}><span className="italic-accent">to know more.</span></MaskWord>
           </h1>
           <motion.p
             initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }}
