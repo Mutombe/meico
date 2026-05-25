@@ -54,9 +54,9 @@ function Hero() {
           screen. Hidden on md+ where the desktop floater takes over. */}
       <motion.div
         style={{ opacity }}
-        className="md:hidden flex justify-center pt-4 pb-1"
+        className="md:hidden flex justify-center pt-3 pb-0 shrink-0"
       >
-        <HeroChainCore size={260} />
+        <HeroChainCore size={180} />
       </motion.div>
 
       {/* SIGNATURE ARTIFACT — desktop: the living chain core floats
@@ -85,7 +85,7 @@ function Hero() {
           as the title block, so nothing sits jammed on the line. */}
       <motion.div
         style={{ opacity }}
-        className="container-edge pt-5 md:pt-7 relative flex items-center justify-between gap-6 md:pl-[calc(var(--spacing-edge)+2.25rem)] lg:pl-[calc(var(--spacing-edge)+3rem)]"
+        className="container-edge pt-3 md:pt-7 relative flex items-center justify-between gap-6 md:pl-[calc(var(--spacing-edge)+2.25rem)] lg:pl-[calc(var(--spacing-edge)+3rem)] shrink-0"
       >
         <span className="presale-tag">
           <span className="dot" />
@@ -101,7 +101,7 @@ function Hero() {
           jammed against the vertical line. */}
       <motion.div
         style={{ opacity }}
-        className="container-edge self-center relative w-full py-4 md:pl-[calc(var(--spacing-edge)+2.25rem)] lg:pl-[calc(var(--spacing-edge)+3rem)]"
+        className="container-edge md:self-center relative w-full py-3 md:py-4 md:pl-[calc(var(--spacing-edge)+2.25rem)] lg:pl-[calc(var(--spacing-edge)+3rem)]"
       >
         <div className="max-w-4xl relative">
           <h1
@@ -123,17 +123,17 @@ function Hero() {
 
           {/* Rotating capability line — cycles the three flagship builds */}
           <SectionReveal delay={0.65}>
-            <RotatingLine items={hero.rotators} className="mt-5 md:mt-6" />
+            <RotatingLine items={hero.rotators} className="mt-3 md:mt-6" />
           </SectionReveal>
 
           <SectionReveal delay={0.78}>
-            <p className="mt-4 text-paper-dim text-[15px] sm:text-[16px] leading-[1.65] max-w-[52ch]">
+            <p className="mt-2 md:mt-4 text-paper-dim text-[13.5px] sm:text-[16px] leading-[1.55] sm:leading-[1.65] max-w-[52ch]">
               {hero.subline}
             </p>
           </SectionReveal>
 
           <SectionReveal delay={0.85}>
-            <div className="mt-6 md:mt-7 flex flex-wrap items-center gap-3">
+            <div className="mt-4 md:mt-7 flex flex-wrap items-center gap-2.5 md:gap-3">
               <MagneticButton
                 as="a"
                 href={hero.primary.to}
@@ -151,10 +151,11 @@ function Hero() {
         </div>
       </motion.div>
 
-      {/* Foot strip — credentials. Padded past the meridian to match. */}
+      {/* Foot strip — credentials. Padded past the meridian to match.
+          Hidden on mobile to keep the hero in a single viewport. */}
       <motion.div
         style={{ opacity }}
-        className="container-edge pb-5 md:pb-7 relative md:pl-[calc(var(--spacing-edge)+2.25rem)] lg:pl-[calc(var(--spacing-edge)+3rem)]"
+        className="container-edge pb-5 md:pb-7 relative hidden md:block md:pl-[calc(var(--spacing-edge)+2.25rem)] lg:pl-[calc(var(--spacing-edge)+3rem)]"
       >
         <div className="hairline-brass mb-4" />
         <div className="flex flex-wrap items-center gap-x-7 gap-y-2 mono text-paper-mid text-[0.6rem]">
