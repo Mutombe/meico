@@ -59,12 +59,12 @@ function Hero() {
         <HeroChainCore size={680} />
       </motion.div>
 
-      {/* SIGNATURE ARTIFACT — mobile: a softer bleed accent in the
-          top-right corner, behind the copy, so text stays the focus. */}
+      {/* SIGNATURE ARTIFACT — mobile: centred behind the copy.
+          Lower opacity keeps the text readable. */}
       <div
         aria-hidden
-        className="md:hidden absolute right-[-32%] top-[-8%] pointer-events-none"
-        style={{ opacity: 0.55 }}
+        className="md:hidden absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+        style={{ opacity: 0.45 }}
       >
         <HeroChainCore size={320} />
       </div>

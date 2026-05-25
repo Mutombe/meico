@@ -8,9 +8,10 @@ import { useReducedMotionPreference } from '../hooks/useReducedMotion.js'
  * HeroChainCore — the homepage signature artifact.
  *
  * A living "Layer-0 chain core": a glowing MEICO hex at the centre,
- * six satellite hex-nodes orbiting on a hexagonal ring, connection
- * lines between them, and data packets continuously streaming INWARD
- * to the core — the chain visibly *settling* everything around it.
+ * seven satellite hex-nodes orbiting on a ring (one per ecosystem
+ * pillar), connection lines between them, and data packets continuously
+ * streaming INWARD to the core — the chain visibly *settling* everything
+ * around it.
  *
  * Every piece is interactive:
  *   · hover the core    → it scales + the whole halo intensifies
@@ -22,15 +23,17 @@ import { useReducedMotionPreference } from '../hooks/useReducedMotion.js'
  * reduced-motion fallback.
  */
 
-// Each satellite carries a pillar logo (now transparent-bg PNGs) and
-// wears that pillar's accent colour.
+// Each satellite carries a pillar logo (transparent-bg PNGs) and wears
+// that pillar's accent colour. One satellite per ecosystem pillar — the
+// order mirrors siteData.pillars.
 const SATS = [
   { color: '#4F8AF6', icon: '/pillar-icons/research-institute.png' },
-  { color: '#F59E0B', icon: '/pillar-icons/shipping.png' },
+  { color: '#38BDF8', icon: '/pillar-icons/b2b.png' },
   { color: '#06B6D4', icon: '/pillar-icons/exchange.png' },
   { color: '#A855F7', icon: '/pillar-icons/meico-pay.png' },
-  { color: '#22C55E', icon: '/pillar-icons/energy.png' },
   { color: '#60A5FA', icon: '/pillar-icons/tokenization.png' },
+  { color: '#F59E0B', icon: '/pillar-icons/shipping.png' },
+  { color: '#22C55E', icon: '/pillar-icons/energy.png' },
 ]
 const ICON_SIZE = 21
 
@@ -75,9 +78,9 @@ export default function HeroChainCore({ size = 680 }) {
     mvY.set(0)
   }
 
-  // satellite positions (hexagonal vertices)
+  // satellite positions — evenly distributed around the ring
   const sats = SATS.map((s, i) => {
-    const a = -Math.PI / 2 + (Math.PI / 3) * i
+    const a = -Math.PI / 2 + ((2 * Math.PI) / SATS.length) * i
     return { ...s, x: C + ORBIT * Math.cos(a), y: C + ORBIT * Math.sin(a) }
   })
 

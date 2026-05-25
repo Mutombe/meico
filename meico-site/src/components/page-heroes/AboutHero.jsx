@@ -42,14 +42,15 @@ export default function AboutHero({ kicker, mission, intro = [] }) {
       <div className="container-edge relative py-6 md:py-8">
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
 
-          {/* TITLE CELL — 2×2 */}
+          {/* TITLE CELL — 2×2. Content stacks at the top of the cell;
+              no justify-between, no min-height, so copy never floats in
+              the bottom half of an over-tall card. */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             whileHover={{ y: -4 }}
-            className="col-span-2 md:row-span-2 glass glass-hover clip-corner p-6 md:p-8 flex flex-col justify-between relative overflow-hidden"
-            style={{ minHeight: 220 }}
+            className="col-span-2 md:row-span-2 glass glass-hover clip-corner p-6 md:p-8 relative overflow-hidden"
           >
             <span
               aria-hidden

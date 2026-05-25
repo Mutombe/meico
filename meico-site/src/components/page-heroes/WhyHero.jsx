@@ -26,7 +26,7 @@ const BLOCKS = [
 export default function WhyHero({ kicker, intro, coinImage }) {
   const [hover, setHover] = useState(null)
   return (
-    <section className="relative flex items-center overflow-hidden min-h-[calc(100svh-96px)]">
+    <section className="relative overflow-hidden">
       <div
         aria-hidden
         className="absolute inset-0 pointer-events-none"

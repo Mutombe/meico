@@ -395,23 +395,12 @@
   }
   .hero-fit > * { min-height: 0; }
 
-  /* Bespoke page heroes — same first-screen contract, but a single
-     vertically-centred content block rather than a 3-row grid.
-     On mobile the two-column heroes stack and can grow taller than a
-     screen — there we drop the hard cap so nothing gets clipped, and
-     only enforce the one-screen lock from md upward. */
-  .page-hero-fit {
-    min-height: calc(100svh - 96px);
-    display: flex;
-    align-items: center;
-  }
-  .page-hero-fit > * { width: 100%; min-height: 0; }
-  @media (min-width: 768px) {
-    .page-hero-fit {
-      max-height: calc(100svh - 96px);
-      overflow: hidden;
-    }
-  }
+  /* Page heroes — previously locked to one viewport screen, which
+     clipped tall copy on small windows and produced dramatic empty
+     spacing on short copy. Now content-sized: heroes are exactly as
+     tall as their content, with the inner py-* providing breathing
+     room. Class kept as a hook for future styling. */
+  .page-hero-fit > * { width: 100%; }
 
   /* Hero title — slightly more conservative scale than display-xl
      so a 4-line title always fits without scrolling. */

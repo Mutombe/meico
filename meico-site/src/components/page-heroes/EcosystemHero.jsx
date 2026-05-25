@@ -34,24 +34,23 @@ export default function EcosystemHero({ kicker, intro }) {
             — {kicker}
           </p>
 
-          {/* Ecosystem diagram — fills the glass card edge-to-edge,
-              soft-blended into the panel. */}
+          {/* Ecosystem diagram — fills the card content area at full
+              crisp width. No blend mode, no opacity, no size cap —
+              keeps the diagram sharp and readable. */}
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.1, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="relative mt-4 -mx-6 md:-mx-8 w-[calc(100%+3rem)] md:w-[calc(100%+4rem)]"
+            className="relative mt-5 w-full"
             aria-hidden
           >
             <img
               src="/ecosystem-hero.png"
               alt=""
               loading="lazy"
-              className="block w-full h-auto md:max-h-[28vh] md:object-contain"
+              className="block w-full h-auto"
               style={{
-                mixBlendMode: 'screen',
-                opacity: 0.88,
-                filter: 'drop-shadow(0 6px 20px rgba(34, 211, 238, 0.25))',
+                filter: 'drop-shadow(0 10px 28px rgba(34, 211, 238, 0.28))',
               }}
             />
           </motion.div>
