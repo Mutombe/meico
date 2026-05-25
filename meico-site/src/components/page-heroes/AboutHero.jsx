@@ -59,7 +59,16 @@ export default function AboutHero({ kicker, mission, intro = [] }) {
             />
             <div className="relative">
               <p className="mono text-electric-300 text-[0.62rem]">— {kicker}</p>
-              <h1 className="hero-title text-paper mt-3">
+              {intro.length > 0 && (
+                <div className="mt-4 space-y-3">
+                  {intro.map((p, i) => (
+                    <p key={i} className="text-paper-dim text-[13px] md:text-[14px] leading-[1.7]">
+                      {p}
+                    </p>
+                  ))}
+                </div>
+              )}
+              <h1 className="display-lg text-paper mt-6">
                 <MaskWord delay={0.1}>Institutional-grade</MaskWord>{' '}
                 <MaskWord delay={0.28}>infrastructure for an</MaskWord>{' '}
                 <MaskWord delay={0.46}>
@@ -67,15 +76,6 @@ export default function AboutHero({ kicker, mission, intro = [] }) {
                 </MaskWord>
               </h1>
             </div>
-            {intro.length > 0 && (
-              <div className="relative mt-5 space-y-3">
-                {intro.map((p, i) => (
-                  <p key={i} className="text-paper-dim text-[12.5px] md:text-[13.5px] leading-[1.7]">
-                    {p}
-                  </p>
-                ))}
-              </div>
-            )}
           </motion.div>
 
           {/* SPINNING HEX CELL — spins faster on hover */}

@@ -1,5 +1,6 @@
 import { Link, useParams, Navigate } from 'react-router-dom'
 import { useRef } from 'react'
+import { motion } from 'framer-motion'
 import { ArrowLeft, ArrowUpRight } from '@phosphor-icons/react'
 import PageTransition from '../../components/PageTransition.jsx'
 import SectionReveal from '../../components/SectionReveal.jsx'
@@ -54,6 +55,40 @@ export default function PillarPage() {
             background: `radial-gradient(ellipse 1200px 800px at 50% 30%, ${c1}30 0%, ${c2}11 40%, transparent 75%)`,
           }}
         />
+
+        {/* Tokenization-only: silver MEICO coin floats on the right of
+            the hero. Desktop only — on mobile the hero stacks vertically
+            and the coin would crowd the copy. */}
+        {pillar.slug === 'tokenization' && (
+          <motion.div
+            aria-hidden
+            initial={{ opacity: 0, scale: 0.9, x: 24 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
+            transition={{ duration: 1.0, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="hidden lg:flex absolute top-20 xl:top-24 right-[3vw] xl:right-[5vw] items-center justify-center pointer-events-none"
+            style={{ width: 'clamp(220px, 22vw, 320px)' }}
+          >
+            <span
+              aria-hidden
+              className="absolute inset-[-20%] pointer-events-none"
+              style={{
+                background:
+                  'radial-gradient(circle, rgba(147,197,253,0.22) 0%, rgba(96,165,250,0.10) 38%, transparent 72%)',
+                filter: 'blur(24px)',
+              }}
+            />
+            <img
+              src="/meico-coin-silver.png"
+              alt=""
+              loading="lazy"
+              className="relative float-y w-full h-auto"
+              style={{
+                filter:
+                  'drop-shadow(0 22px 40px rgba(96,165,250,0.40)) drop-shadow(0 8px 14px rgba(0,0,0,0.45))',
+              }}
+            />
+          </motion.div>
+        )}
 
         <div className="container-edge relative">
           {/* Kicker rail — icon + ordinal + label, sits as ONE composed unit */}

@@ -23,7 +23,7 @@ const BLOCKS = [
   { t: 'New Technology',   w: '64%',  tint: 'rgba(233,192,99,0.14)',  edge: '#E9C063' },
 ]
 
-export default function WhyHero({ kicker, intro, coinImage }) {
+export default function WhyHero({ kicker, intro }) {
   const [hover, setHover] = useState(null)
   return (
     <section className="relative overflow-hidden">
@@ -36,45 +36,6 @@ export default function WhyHero({ kicker, intro, coinImage }) {
       <div className="container-edge relative w-full py-10 md:py-14 grid lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-14 items-center">
         {/* LEFT — copy */}
         <div>
-          {/* MEICO silver coin — small anchor above the copy. Decorative. */}
-          {coinImage && (
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: -10 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 1.0, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="relative mb-5 flex items-center justify-start"
-              aria-hidden
-            >
-              <span
-                aria-hidden
-                className="absolute pointer-events-none"
-                style={{
-                  width: 220,
-                  height: 220,
-                  left: -28,
-                  top: '50%',
-                  transform: 'translateY(-50%)',
-                  background:
-                    'radial-gradient(circle, rgba(147,197,253,0.22) 0%, rgba(59,130,246,0.10) 35%, transparent 70%)',
-                  filter: 'blur(20px)',
-                }}
-              />
-              <img
-                src={coinImage}
-                alt=""
-                loading="lazy"
-                className="relative float-y"
-                style={{
-                  width: 'clamp(92px, 10vw, 124px)',
-                  height: 'auto',
-                  objectFit: 'contain',
-                  filter:
-                    'drop-shadow(0 16px 30px rgba(59,130,246,0.35)) drop-shadow(0 6px 12px rgba(0,0,0,0.45))',
-                }}
-              />
-            </motion.div>
-          )}
-
           <motion.p
             initial={{ opacity: 0, x: -16 }} animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
