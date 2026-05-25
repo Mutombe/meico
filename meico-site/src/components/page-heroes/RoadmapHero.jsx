@@ -22,7 +22,7 @@ const NODES = [
   { x: 1010, y: 180, label: 'GLOBAL' },
 ]
 
-export default function RoadmapHero({ kicker, intro }) {
+export default function RoadmapHero({ kicker, intro }) { // intro optional — removed from the Roadmap page but kept as a prop for future reuse
   const [hover, setHover] = useState(null)
   const W = 1100, H = 240
   const path = NODES.reduce((d, n, i) => {
@@ -40,30 +40,33 @@ export default function RoadmapHero({ kicker, intro }) {
         style={{ background: 'radial-gradient(ellipse 80% 60% at 30% 20%, rgba(34,211,238,0.16), transparent 65%)' }}
       />
 
-      <div className="container-edge relative py-8">
+      <div className="container-edge relative py-8 text-center">
         <motion.p
-          initial={{ opacity: 0, x: -16 }} animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="mono text-cyan-400 text-[0.62rem] inline-flex items-center gap-2.5"
         >
           <span className="block w-1.5 h-1.5 rounded-full bg-cyan-400" style={{ boxShadow: '0 0 8px #22D3EE' }} />
           — {kicker}
         </motion.p>
-        <h1 className="display-xl text-paper mt-5 max-w-3xl">
+        <h1 className="display-xl text-paper mt-5 max-w-3xl mx-auto">
           <MaskWord delay={0.05}>Six phases,</MaskWord>{' '}
           <MaskWord delay={0.25}><span className="italic-accent">one continent.</span></MaskWord>
         </h1>
-        <motion.p
-          initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.4 }}
-          className="mt-7 text-paper-dim text-[16px] leading-[1.8] max-w-xl"
-        >
-          {intro}
-        </motion.p>
+        {intro && (
+          <motion.p
+            initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.4 }}
+            className="mt-7 text-paper-dim text-[16px] leading-[1.8] max-w-xl mx-auto"
+          >
+            {intro}
+          </motion.p>
+        )}
 
         {/* Mobile — a compact row of phase hex-chips (the wide path
-            would shrink to illegibility on a phone). */}
-        <div className="md:hidden mt-8 flex flex-wrap gap-2.5">
+            would shrink to illegibility on a phone). Centred so it
+            aligns with the centred title above. */}
+        <div className="md:hidden mt-8 flex flex-wrap justify-center gap-2.5">
           {NODES.map((n, i) => (
             <motion.span
               key={n.label}

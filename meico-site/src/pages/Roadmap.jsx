@@ -24,10 +24,7 @@ const STATUS_COLOR = {
 export default function Roadmap() {
   return (
     <PageTransition>
-      <RoadmapHero
-        kicker="The Path"
-        intro="From pre-sale through DAO governance to global scaling — every milestone, plainly stated."
-      />
+      <RoadmapHero kicker="The Path" />
 
       <SectionSeam palette={['#22D3EE', '#60A5FA', '#E9C063', '#A855F7']} variant="wave-fold" height={140} />
 
