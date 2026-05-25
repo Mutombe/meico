@@ -108,13 +108,6 @@ export default function About() {
             <EcosystemArtifact />
           </div>
         </SectionReveal>
-        <div className="max-w-3xl mx-auto mt-10 space-y-5">
-          {about.ecosystem.body.map((p, i) => (
-            <SectionReveal key={i} delay={i * 0.04}>
-              <p className="text-paper-dim text-[15.5px] leading-[1.75]">{p}</p>
-            </SectionReveal>
-          ))}
-        </div>
       </section>
 
       <SectionSeam palette={['#A855F7', '#E9C063', '#22D3EE']} variant="prism" height={140} />

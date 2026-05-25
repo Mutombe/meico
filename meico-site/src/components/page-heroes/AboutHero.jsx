@@ -42,15 +42,15 @@ export default function AboutHero({ kicker, mission, intro = [] }) {
       <div className="container-edge relative py-6 md:py-8">
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
 
-          {/* TITLE CELL — 2×2. Content stacks at the top of the cell;
-              no justify-between, no min-height, so copy never floats in
-              the bottom half of an over-tall card. */}
+          {/* TITLE CELL — 2×2. md:self-start means the cell sizes to
+              its content (no stretch into the 2-row area), and the
+              reduced padding pins the kicker right at the top edge. */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             whileHover={{ y: -4 }}
-            className="col-span-2 md:row-span-2 glass glass-hover clip-corner p-6 md:p-8 relative overflow-hidden"
+            className="col-span-2 md:row-span-2 md:self-start glass glass-hover clip-corner px-6 md:px-8 pt-4 md:pt-5 pb-6 md:pb-7 relative overflow-hidden"
           >
             <span
               aria-hidden
@@ -59,7 +59,7 @@ export default function AboutHero({ kicker, mission, intro = [] }) {
             />
             <div className="relative">
               <p className="mono text-electric-300 text-[0.62rem]">— {kicker}</p>
-              <h1 className="hero-title text-paper mt-5">
+              <h1 className="hero-title text-paper mt-3">
                 <MaskWord delay={0.1}>Institutional-grade</MaskWord>{' '}
                 <MaskWord delay={0.28}>infrastructure for an</MaskWord>{' '}
                 <MaskWord delay={0.46}>
@@ -68,7 +68,7 @@ export default function AboutHero({ kicker, mission, intro = [] }) {
               </h1>
             </div>
             {intro.length > 0 && (
-              <div className="relative mt-6 space-y-3">
+              <div className="relative mt-5 space-y-3">
                 {intro.map((p, i) => (
                   <p key={i} className="text-paper-dim text-[12.5px] md:text-[13.5px] leading-[1.7]">
                     {p}
