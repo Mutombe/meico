@@ -446,11 +446,11 @@ export const referrals = {
   kicker: 'Referrals',
   title: 'Bring a friend, earn a 10% bonus.',
   body:
-    'During the pre-sale you can refer friends and partners to MEICO. For every successful contribution from someone using your code, you receive a 10% bonus in MEICO tokens, paid out at distribution.',
+    'During the pre-sale you can refer friends and partners to MEICO. For every successful contribution from someone using your code, you receive 10%, paid out at distribution.',
   steps: [
-    { n: 1, title: 'Get your code',     detail: 'Register as a referrer below and we send you a unique link.' },
+    { n: 1, title: 'Get your code',     detail: '' },
     { n: 2, title: 'Share with people', detail: 'Send your link to anyone interested in the pre-sale.' },
-    { n: 3, title: 'Earn 10% in MEICO', detail: 'Every successful purchase routed through your link earns you 10% paid at distribution.' },
+    { n: 3, title: 'Earn 10%',          detail: 'Every successful purchase routed through your link earns you 10% paid at distribution.' },
   ],
 }
 
@@ -475,7 +475,7 @@ export const faq = [
   { q: 'Where is MEICO based?',
     a: 'MEICO operates across multiple African jurisdictions. Contact info@meicolabs.com for partnership and regulatory enquiries.' },
   { q: 'How does the referral program work?',
-    a: 'During the pre-sale, every successful purchase routed through your unique referral link earns you a 10% bonus in MEICO, paid at distribution.' },
+    a: 'During the pre-sale, every successful purchase routed through your unique referral link earns you 10%, paid at distribution.' },
 ]
 
 // ====== CONTACT ===================================================

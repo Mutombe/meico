@@ -65,7 +65,7 @@ export default function ReferralsHero({ kicker, intro }) {
               10%
             </span>
             <span className="mono text-brass-400 text-[0.6rem] tracking-[0.2em] pt-3">
-              BONUS<br />IN MEICO
+              BONUS
             </span>
           </motion.div>
 
