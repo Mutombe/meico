@@ -26,9 +26,6 @@ export default function Footer() {
             <p className="font-display text-2xl md:text-3xl text-paper leading-tight max-w-md">
               Spurring the adoption of cryptocurrencies in <span className="italic-accent">Africa.</span>
             </p>
-            <p className="text-sm leading-relaxed text-paper-mid max-w-md">
-              An institutional-grade Layer-0 hybrid blockchain — built for Real-World Assets, DePINs and a pan-African economic step-change.
-            </p>
             <div className="flex items-center gap-2 pt-2">
               {[
                 { href: brand.socials.twitter,  label: 'X',        Icon: XLogo },
