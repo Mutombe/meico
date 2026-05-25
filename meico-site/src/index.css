@@ -384,16 +384,26 @@
   }
 
   /* === HERO HEX — outer container ============================ */
-  /* Hero must fit the first screen — viewport height MINUS the
-     fixed nav (64) and the TopTicker (32) = 96px of chrome. */
+  /* Hero fits the first screen — viewport height MINUS the fixed nav
+     (64) and the TopTicker (32) = 96px of chrome.
+     Mobile: only enforce a min-height so the chain core artifact and
+     the copy can stack vertically (artifact on top, copy + buttons
+     below) and never get clipped.
+     Desktop (md+): lock the grid to exactly one screen — top row for
+     the pre-sale tag, 1fr for the centred title block, bottom for the
+     credentials strip. Absolute artifacts float over this grid. */
   .hero-fit {
     min-height: calc(100svh - 96px);
-    max-height: calc(100svh - 96px);
-    overflow: hidden;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
   }
-  .hero-fit > * { min-height: 0; }
+  @media (min-width: 768px) {
+    .hero-fit {
+      max-height: calc(100svh - 96px);
+      overflow: hidden;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+    }
+    .hero-fit > * { min-height: 0; }
+  }
 
   /* Page heroes — previously locked to one viewport screen, which
      clipped tall copy on small windows and produced dramatic empty

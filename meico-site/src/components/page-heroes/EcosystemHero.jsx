@@ -45,7 +45,7 @@ export default function EcosystemHero({ kicker, intro }) {
             aria-hidden
           >
             <img
-              src="/ecosystem-hero.png"
+              src="/illustrations/ecosystem-diagram.png"
               alt=""
               loading="lazy"
               className="block w-full h-auto"

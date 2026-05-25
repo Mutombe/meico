@@ -49,6 +49,16 @@ function Hero() {
 
   return (
     <section ref={ref} className="relative hero-fit overflow-hidden">
+      {/* SIGNATURE ARTIFACT — mobile: inline at the top of the hero,
+          giving the artifact and the copy each their own half of the
+          screen. Hidden on md+ where the desktop floater takes over. */}
+      <motion.div
+        style={{ opacity }}
+        className="md:hidden flex justify-center pt-4 pb-1"
+      >
+        <HeroChainCore size={260} />
+      </motion.div>
+
       {/* SIGNATURE ARTIFACT — desktop: the living chain core floats
           right and overlaps the H1's right edge, mouse-reactive +
           scroll-linked. */}
@@ -58,16 +68,6 @@ function Hero() {
       >
         <HeroChainCore size={680} />
       </motion.div>
-
-      {/* SIGNATURE ARTIFACT — mobile: centred behind the copy.
-          Lower opacity keeps the text readable. */}
-      <div
-        aria-hidden
-        className="md:hidden absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
-        style={{ opacity: 0.45 }}
-      >
-        <HeroChainCore size={320} />
-      </div>
 
       {/* Brass meridian — vertical hairline at H1's left edge */}
       <div
