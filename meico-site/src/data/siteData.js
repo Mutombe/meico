@@ -485,7 +485,7 @@ export const contact = {
   body: 'Whether you\'re a builder, an investor, a regional partner or simply curious — drop a note and we\'ll respond within the working week.',
   email: 'info@meicolabs.com',
   channels: [
-    { label: 'Email',    value: 'info@meicolabs.com', href: 'mailto:info@meicolabs.com' },
+    { label: 'Email',    value: 'info@meicolabs.com', href: 'mailto:info@meicolabs.com?subject=General%20enquiry&body=Hi%20MEICO%20team%2C%0A%0AI%27d%20like%20to%20get%20in%20touch%20about%20' },
     { label: 'Twitter',  value: '@Meicolabs',         href: 'https://twitter.com/Meicolabs' },
     { label: 'Telegram', value: 'Join our channel',   href: 'https://t.me/+Yt6OEbuCIAhjZDI0' },
     { label: 'Facebook', value: 'Follow on Facebook', href: 'https://www.facebook.com/share/16AozXmJ4X/' },

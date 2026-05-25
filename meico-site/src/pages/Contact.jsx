@@ -14,13 +14,20 @@ const ICON = {
 }
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: '', email: '', subject: 'General enquiry', message: '' })
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    subject: 'General enquiry',
+    message: "Hi MEICO team,\n\nI'd like to get in touch about ",
+  })
   const update = (k) => (e) => setForm((s) => ({ ...s, [k]: e.target.value }))
 
   function submit(e) {
     e.preventDefault()
     const body =
-      `Hello MEICO,\n\n${form.message}\n\n— ${form.name}${form.email ? ' · ' + form.email : ''}`
+      `${form.message}\n\n— ${form.name}${form.email ? ' · ' + form.email : ''}`
+    // Open the user's default mail client, pre-filled and addressed
+    // to info@meicolabs.com (contact.email).
     window.location.href = `mailto:${contact.email}?subject=${encodeURIComponent(form.subject)}&body=${encodeURIComponent(body)}`
   }
 
@@ -69,7 +76,9 @@ export default function Contact() {
             <form onSubmit={submit} className="glass clip-corner p-7 md:p-9">
               <h2 className="font-display text-paper text-2xl md:text-3xl">Send a note</h2>
               <p className="mt-2 text-paper-mid text-sm">
-                We prefill an email from your default client — nothing leaves the browser without your confirmation.
+                Hit <strong className="text-paper">Open Email</strong> and your default mail client opens
+                a draft to <span className="text-electric-300">{contact.email}</span> with the subject
+                and message pre-filled. Nothing leaves the browser without your confirmation.
               </p>
 
               <div className="mt-7 space-y-4">
