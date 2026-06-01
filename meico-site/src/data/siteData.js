@@ -334,12 +334,11 @@ export const tokenomics = {
   kicker: 'The Token',
   title: 'A two-token model, capped, transparent.',
   intro:
-    'MEICO uses a permanently-capped supply of 1,000,000,000 tokens, with a soft cap of $4.5M (360M tokens) and a hard cap of $18M for the public sale. Distribution to participants takes place 30 days after the token sale ends.',
+    'MEICO uses a permanently-capped supply of 1,000,000,000 tokens, with 360M tokens offered for token sale, with a hard cap of $88M. Distribution to participants takes place 30 days after the token sale ends.',
   numbers: [
     { label: 'Tokens Offered',     value: '360M' },
-    { label: 'Soft Cap',           value: '$4.5M' },
-    { label: 'Hard Cap',           value: '$18M' },
-    { label: 'Max Supply',         value: '1B', note: 'Permanently capped' },
+    { label: 'Hard Cap',           value: '$88M' },
+    { label: 'Max Supply',         value: '1 Billion', note: 'Permanently capped' },
     { label: 'Distribution',       value: '30 days after sale ends' },
   ],
   allocation: [
