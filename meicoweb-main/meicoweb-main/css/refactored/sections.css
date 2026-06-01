@@ -1,0 +1,553 @@
+/* ========================================
+   SECTION STYLES
+   Page section specific styles
+   ======================================== */
+
+/* ========================================
+   HERO SECTION
+   Future React: <HeroSection>
+   ======================================== */
+
+.banner {
+    position: relative;
+    min-height: auto !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 150px 0 var(--spacing-3xl) !important;
+}
+
+.banner-zinnia {
+    background: var(--bg-dark-primary);
+}
+
+.banner-content {
+    position: relative;
+    z-index: 10;
+}
+
+.header-txt {
+    text-align: center;
+}
+
+.header-txt h1 {
+    font-size: 3em;
+    font-weight: var(--font-weight-bold);
+    line-height: 1.2;
+    margin-bottom: var(--spacing-lg);
+}
+
+.inner-headings {
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    overflow: hidden;
+    margin: var(--spacing-lg) 0;
+}
+
+.inner-headings span {
+    position: relative;
+    color: rgb(243, 240, 250);
+    animation: slideText 8s ease infinite;
+}
+
+@keyframes slideText {
+
+    0%,
+    100% {
+        top: 0;
+    }
+
+    20% {
+        top: 0;
+    }
+
+    25% {
+        top: -50px;
+    }
+
+    45% {
+        top: -50px;
+    }
+
+    50% {
+        top: -100px;
+    }
+
+    70% {
+        top: -100px;
+    }
+
+    75% {
+        top: -150px;
+    }
+
+    95% {
+        top: -150px;
+    }
+}
+
+.btns {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    list-style: none;
+    margin-top: var(--spacing-xl);
+}
+
+/* Particle Background */
+.particles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* UI Shapes */
+.ui-shape {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    opacity: 0.03;
+}
+
+/* ========================================
+   SECTION HEADERS
+   Future React: <SectionHeader>
+   ======================================== */
+
+.section-head-s7 {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.section-title-s7 {
+    font-size: var(--font-size-h2);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-md);
+    color: var(--color-white);
+}
+
+.section-head-s7 .lead {
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 900px;
+    margin: 0 auto var(--spacing-md);
+}
+
+/* ========================================
+   ABOUT SECTION
+   Future React: <AboutSection>
+   ======================================== */
+
+.about-section {
+    position: relative;
+}
+
+.about-section .section-head-s7 {
+    margin-bottom: var(--spacing-3xl);
+}
+
+/* ========================================
+   TOKEN SALE SECTION
+   Future React: <TokenSaleSection>
+   ======================================== */
+
+.token-sale-section {
+    position: relative;
+}
+
+.section-bg-zinnia {
+    background: linear-gradient(135deg, #1a1c3a 0%, #0f1128 100%);
+}
+
+.tokdis-list {
+    margin-top: var(--spacing-xl);
+}
+
+.tokdis-item {
+    padding: var(--spacing-lg);
+    text-align: center;
+}
+
+.tokdis-item span {
+    display: block;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    margin-bottom: var(--spacing-xs);
+}
+
+.tokdis-item h5 {
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+}
+
+/* ========================================
+   TOKEN ALLOCATION SECTION
+   Future React: <TokenAllocationSection>
+   ======================================== */
+
+.token-alocate-section {
+    position: relative;
+}
+
+.tab-s4 {
+    margin-top: var(--spacing-xl);
+}
+
+.nav-tabs {
+    display: flex;
+    justify-content: center;
+    border: none;
+    list-style: none;
+    margin-bottom: var(--spacing-xl);
+}
+
+.nav-tabs .nav-item {
+    margin: 0 var(--spacing-sm);
+}
+
+.nav-tabs .nav-link {
+    padding: var(--spacing-sm) var(--spacing-xl);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--color-white);
+    border: 2px solid transparent;
+    border-radius: var(--radius-lg);
+    transition: var(--transition-base);
+}
+
+.nav-tabs .nav-link:hover,
+.nav-tabs .nav-link.active {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.tkn-crt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-2xl);
+}
+
+.tkn-crt-img img {
+    max-width: 400px;
+}
+
+.tkn-crt-lst {
+    list-style: none;
+}
+
+.tkn-crt-itm {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.tkn-crt-prcnt {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    border-radius: var(--radius-circle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: var(--font-weight-bold);
+    margin-right: var(--spacing-md);
+}
+
+.tkn-crt-prcnt.one {
+    background: #46bdf4;
+}
+
+.tkn-crt-prcnt.two {
+    background: #7a0fff;
+}
+
+.tkn-crt-prcnt.three {
+    background: #2b56f5;
+}
+
+.tkn-crt-prcnt.four {
+    background: #ff6b6b;
+}
+
+.tkn-crt-prcnt.five {
+    background: #4ecdc4;
+}
+
+.tkn-crt-ttl {
+    font-size: 16px;
+    color: var(--color-white);
+}
+
+/* ========================================
+   DOCUMENTS SECTION
+   Future React: <DocumentsSection>
+   ======================================== */
+
+.document-section {
+    position: relative;
+}
+
+.document-img-s3 {
+    text-align: center;
+}
+
+.document-img-s3 img {
+    max-width: 400px;
+}
+
+.document-list {
+    list-style: none;
+    margin-top: var(--spacing-lg);
+}
+
+.document-list li {
+    margin-bottom: var(--spacing-md);
+}
+
+.dropdown-menu {
+    background: rgba(16, 18, 45, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-sm);
+    padding: var(--spacing-sm);
+}
+
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: var(--spacing-xs) var(--spacing-md);
+    color: var(--color-white);
+    transition: var(--transition-base);
+}
+
+.dropdown-menu a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-primary);
+}
+
+/* ========================================
+   ROADMAP SECTION
+   Future React: <RoadmapSection>
+   ======================================== */
+
+.roadmap-section {
+    position: relative;
+}
+
+.timeline-row-odd,
+.timeline-row-even {
+    position: relative;
+}
+
+.timeline-row-done .timeline-item {
+    border-left: 4px solid var(--color-primary);
+}
+
+.timeline-current {
+    border-left: 4px solid var(--color-secondary);
+}
+
+/* ========================================
+   TEAM SECTION
+   Future React: <TeamSection>
+   ======================================== */
+
+.team-section {
+    position: relative;
+}
+
+/* ========================================
+   FAQ SECTION
+   Future React: <FAQSection>
+   ======================================== */
+
+.faq-section {
+    position: relative;
+}
+
+.tab-custom-s3 {
+    margin-top: var(--spacing-xl);
+}
+
+/* ========================================
+   CONTACT SECTION
+   Future React: <ContactSection>
+   ======================================== */
+
+.contact-section {
+    position: relative;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-xl);
+    list-style: none;
+    margin: var(--spacing-xl) 0;
+}
+
+.contact-info li {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.contact-info em {
+    font-size: 20px;
+    color: var(--color-primary);
+}
+
+.contact-info span,
+.contact-info a {
+    color: var(--color-white);
+}
+
+.form-message {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ========================================
+   FOOTER SECTION
+   Future React: <Footer>
+   ======================================== */
+
+.footer-section {
+    position: relative;
+    padding: var(--spacing-2xl) 0 var(--spacing-lg);
+}
+
+.widget-item {
+    margin-bottom: var(--spacing-xl);
+}
+
+.widget-title {
+    font-size: var(--font-size-h5);
+    margin-bottom: var(--spacing-md);
+    color: var(--color-white);
+}
+
+.widget-links {
+    list-style: none;
+}
+
+.widget-links li {
+    margin-bottom: var(--spacing-xs);
+}
+
+.widget-links a {
+    color: rgba(255, 255, 255, 0.7);
+    transition: var(--transition-base);
+}
+
+.widget-links a:hover {
+    color: var(--color-primary);
+}
+
+.widget-subsctibe p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: var(--spacing-md);
+}
+
+.subscription-form {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.input-round {
+    flex: 1;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: transparent;
+    color: var(--color-white);
+    border-radius: var(--radius-lg);
+    outline: none;
+}
+
+.input-round:focus {
+    border-color: var(--color-primary);
+}
+
+.btn-plane {
+    width: 50px;
+    height: 50px;
+    border-radius: var(--radius-circle);
+    background: var(--color-primary);
+    border: none;
+    color: var(--color-white);
+    cursor: pointer;
+    transition: var(--transition-base);
+}
+
+.btn-plane:hover {
+    background: var(--color-secondary);
+    transform: translateY(-2px);
+}
+
+.footer-bottom {
+    margin-top: var(--spacing-2xl);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-brand img {
+    max-height: 35px;
+}
+
+.copyright-text {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+}
+
+.copyright-text a {
+    color: var(--color-primary);
+}
+
+/* ========================================
+   RESPONSIVE SECTIONS
+   ======================================== */
+
+@media only screen and (max-width: 991px) {
+    .banner {
+        min-height: auto;
+        padding: var(--spacing-3xl) 0 var(--spacing-2xl);
+    }
+
+    .header-txt h1 {
+        font-size: 2em;
+    }
+
+    .tkn-crt {
+        flex-direction: column;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .btns {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-tabs {
+        flex-direction: column;
+    }
+
+    .nav-tabs .nav-item {
+        margin: var(--spacing-xs) 0;
+    }
+}

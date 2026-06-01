@@ -33,7 +33,7 @@ export default function WhyHero({ kicker, intro }) {
         style={{ background: 'radial-gradient(ellipse 70% 60% at 30% 20%, rgba(59,130,246,0.16), transparent 65%)' }}
       />
 
-      <div className="container-edge relative w-full py-10 md:py-14 grid lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-14 items-center">
+      <div className="container-edge relative w-full py-10 md:py-14 grid lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-14 items-start">
         {/* LEFT — copy */}
         <div>
           <motion.p

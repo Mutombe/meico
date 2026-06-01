@@ -88,7 +88,7 @@ export const why = {
   kicker: 'Why MEICO',
   title: 'Blockchain meets the major economic drivers.',
   intro:
-    "Meico is uniquely positioned to spearhead the adoption of digital currencies in Africa using distributed ledger technology. We are motivated by the desire to see human capital, physical capital, natural resources, and new technology — the major drivers of economic growth — congealing into a robust foundation for sustainable long-term growth, with blockchain as the mainspring. We intend to work with experts across industries to supplant obsolete technologies with new ones and lower the high costs associated with creative destruction.",
+    'Meico is uniquely positioned to spearhead the adoption of digital currencies in Africa using distributed ledger technology. We are motivated by the desire to witness human capital, physical capital, natural resources, and new technology, the major drivers of economic growth, congealing into a robust foundation for sustainable long-term growth with blockchain technology as the mainspring. We intend to work with experts across different industries to supplant obsolete technologies with the latest ones to lower the high costs of creative destruction.',
   reasons: [
     {
       title: 'African Economic Vision',
