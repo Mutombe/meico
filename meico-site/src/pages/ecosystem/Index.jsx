@@ -10,7 +10,7 @@ export default function EcosystemIndex() {
     <PageTransition>
       <EcosystemHero
         kicker="The Ecosystem"
-        intro="From the Research Institute that creates new African industries, through to the freight DePINs that move their goods — every MEICO product is a working surface of one connected ecosystem."
+        intro="From the Research Institute that helps create new African industries, through to the freight DePINs that move their goods, every Meico product is an indispensable part of one connected ecosystem."
       />
 
       <SectionSeam palette={['#3B82F6', '#22D3EE', '#A855F7']} variant="wave-soft" height={130} />
@@ -20,8 +20,8 @@ export default function EcosystemIndex() {
           <div className="max-w-2xl mb-10">
             <p className="mono text-electric-300 text-[0.62rem]">— Explore each pillar</p>
             <h2 className="display-md text-paper mt-4">
-              Seven working surfaces,{' '}
-              <span className="italic-accent">one Layer-0.</span>
+              Seven working pillars{' '}
+              <span className="italic-accent">intricately connected.</span>
             </h2>
           </div>
         </SectionReveal>
