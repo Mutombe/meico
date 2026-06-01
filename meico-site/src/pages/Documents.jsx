@@ -10,7 +10,7 @@ export default function Documents() {
     <PageTransition>
       <DocumentsHero
         kicker="The Documents"
-        intro="Every document MEICO has published — from the technical Genesis Whitepaper through to the Terms of Coin Sale and Privacy Policy. All PDFs, all open."
+        intro="Read our official documents from the Genesis Whitepaper through to the Terms of Coin Sale and Privacy Policy."
         count={documents.length}
       />
 
