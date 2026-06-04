@@ -17,7 +17,7 @@ export default function Tokenomics() {
 
       {/* Numbers band — count-up tiles */}
       <section className="container-edge py-10">
-        <div className="grid grid-cols-2 lg:grid-cols-5 gap-3">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
           {tokenomics.numbers.map((n, i) => (
             <SectionReveal key={n.label} delay={i * 0.05}>
               <NumberTile n={n} />
@@ -65,7 +65,7 @@ export default function Tokenomics() {
   )
 }
 
-/** Count-up tile — parses "$4.5M", "360M", "1B" style values and animates. */
+/** Count-up tile — parses "$88M", "360M", "1B" style values and animates. */
 function NumberTile({ n }) {
   const m = n.value.match(/^(\$?)(\d+(?:\.\d+)?)\s*([MBmb%]?)(.*)$/)
   if (!m) {

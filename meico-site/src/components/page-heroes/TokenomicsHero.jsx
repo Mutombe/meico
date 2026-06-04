@@ -20,8 +20,7 @@ export default function TokenomicsHero({ kicker, intro }) {
   const caps = [
     { v: '1B',    l: 'MAX SUPPLY' },
     { v: '360M',  l: 'OFFERED' },
-    { v: '$4.5M', l: 'SOFT CAP' },
-    { v: '$18M',  l: 'HARD CAP' },
+    { v: '$88M',  l: 'HARD CAP' },
   ]
 
   return (
@@ -124,7 +123,7 @@ export default function TokenomicsHero({ kicker, intro }) {
           </div>
 
           {/* cap numbers — each cell hoverable */}
-          <div className="mt-7 grid grid-cols-4 gap-3 relative">
+          <div className="mt-7 grid grid-cols-3 gap-3 relative">
             {caps.map((c, i) => (
               <motion.div
                 key={c.l}

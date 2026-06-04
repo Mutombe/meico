@@ -8,8 +8,7 @@
 const ITEMS = [
   '$MEICO',
   '360M offered',
-  '$4.5M soft cap',
-  '$18M hard cap',
+  '$88M hard cap',
   '1B max supply · permanently capped',
   'Pre-sale · Coming soon',
   'Layer-0 · Hybrid · Stellar consensus',

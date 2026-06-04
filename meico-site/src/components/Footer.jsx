@@ -83,12 +83,8 @@ export default function Footer() {
         </div>
 
         {/* Pre-sale strip */}
-        <div className="border-t border-electric-500/12 pt-8 grid md:grid-cols-2 gap-6 items-center">
-          <p className="mono text-paper-mid text-[0.62rem]">
-            <span className="inline-block w-1.5 h-1.5 rounded-full bg-electric-400 animate-pulse mr-2 align-middle" />
-            Pre-sale · Coming soon · 360M tokens · Soft cap $4.5M · Hard cap $18M
-          </p>
-          <div className="md:text-right">
+        <div className="border-t border-electric-500/12 pt-8 flex justify-center md:justify-end items-center">
+          <div>
             <Link to="/tokenomics" className="btn-electric">
               See Tokenomics <ArrowRight size={12} weight="bold" />
             </Link>
