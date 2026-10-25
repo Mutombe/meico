@@ -27,7 +27,7 @@ export default function Contact() {
     const body =
       `${form.message}\n\n— ${form.name}${form.email ? ' · ' + form.email : ''}`
     // Open the user's default mail client, pre-filled and addressed
-    // to info@meicolabs.com (contact.email).
+    // to admin@meicolabs.com (contact.email).
     window.location.href = `mailto:${contact.email}?subject=${encodeURIComponent(form.subject)}&body=${encodeURIComponent(body)}`
   }
 
