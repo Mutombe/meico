@@ -7,7 +7,7 @@ export const brand = {
   longName: 'Meico Labs',
   tagline: 'Spurring the adoption of cryptocurrencies in Africa',
   positioning: 'An institutional-grade Layer-0 hybrid blockchain.',
-  email: 'info@meicolabs.com',
+  email: 'admin@meicolabs.com',
   domain: 'meicolabs.com',
   logo: '/logo.png',
   socials: {
@@ -466,7 +466,7 @@ export const faq = [
   { q: 'What is the Meico stablecoin?',
     a: 'A fully transparent and compliance-first stablecoin native to the Meico chain, used for everyday transactions, remittances and B2B settlements.' },
   { q: 'Where is MEICO based?',
-    a: 'MEICO operates across multiple African jurisdictions. Contact info@meicolabs.com for partnership and regulatory enquiries.' },
+    a: 'MEICO operates across multiple African jurisdictions. Contact admin@meicolabs.com for partnership and regulatory enquiries.' },
   { q: 'How does the referral program work?',
     a: 'During the pre-sale, every successful purchase routed through your unique referral link earns you 10%, paid at distribution.' },
 ]
@@ -478,7 +478,7 @@ export const contact = {
   body: 'Whether you\'re a builder, an investor, a regional partner or simply curious — drop a note and we\'ll respond within the working week.',
   email: 'admin@meicolabs.com',
   channels: [
-    { label: 'Email',    value: 'info@meicolabs.com', href: 'mailto:info@meicolabs.com?subject=General%20enquiry&body=Hi%20MEICO%20team%2C%0A%0AI%27d%20like%20to%20get%20in%20touch%20about%20' },
+    { label: 'Email',    value: 'admin@meicolabs.com', href: 'mailto:admin@meicolabs.com?subject=General%20enquiry&body=Hi%20MEICO%20team%2C%0A%0AI%27d%20like%20to%20get%20in%20touch%20about%20' },
     { label: 'Twitter',  value: '@Meicolabs',         href: 'https://twitter.com/Meicolabs' },
     { label: 'Telegram', value: 'Join our channel',   href: 'https://t.me/+Yt6OEbuCIAhjZDI0' },
     { label: 'Facebook', value: 'Follow on Facebook', href: 'https://www.facebook.com/share/16AozXmJ4X/' },
